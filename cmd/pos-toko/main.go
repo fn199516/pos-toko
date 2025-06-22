@@ -22,7 +22,7 @@ func main() {
 	logger.InitLoggerZap()
 
 	// koneksi database
-	database.Connection(cfg.DbDsn)
+	databases.Connection(cfg.DbDsn)
 
 	databases.DB.AutoMigrate(&domain.Product{}, &domain.User{}, &domain.Transaction{})
 	r := gin.Default()
